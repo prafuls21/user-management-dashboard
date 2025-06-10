@@ -7,7 +7,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { User } from '../../models/user.model';
 
@@ -23,7 +23,7 @@ import { User } from '../../models/user.model';
     MatIconModule,
     MatButtonModule,
     RouterLink,
-    FormsModule
+    FormsModule, RouterModule
   ],
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.scss']

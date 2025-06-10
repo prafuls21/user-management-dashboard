@@ -1,7 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { UserService } from '../../services/user.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
@@ -19,7 +19,7 @@ import { CommonModule } from '@angular/common';
     MatFormFieldModule,
     MatButtonModule,
     MatCheckboxModule,
-    MatCardModule, CommonModule
+    MatCardModule, CommonModule,RouterModule
   ],
   templateUrl: './user-edit.component.html',
   styleUrls: ['./user-edit.component.scss']
@@ -36,8 +36,11 @@ export class UserEditComponent implements OnInit {
 
   ngOnInit(): void {
     this.userId = this.route.snapshot.paramMap.get('id');
+    console.log('UserEditComponent:', this.userId);
+    //debugger;
     this.isNewUser = this.userId === 'new';
-    
+    //console.log('Is new user:', this.isNewUser);
+    //console.log('User ID:', this.userId);
     this.userForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],

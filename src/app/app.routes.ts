@@ -10,6 +10,7 @@ export const routes: Routes = [
   { path: 'users', component: UserListComponent },
   { path: 'users/:id', component: UserDetailComponent },
   { path: 'users/:id/edit', component: UserEditComponent },
+  { path: 'users/new/edit', component: UserEditComponent },
   { path: '**', redirectTo: '/dashboard' }
 
 ];
